@@ -1,8 +1,8 @@
-FROM ubuntu:trusty
-MAINTAINER info@tutum.co
+FROM alpine
+MAINTAINER support@tutum.co
 
-RUN apt-get update && apt-get install -yq logrotate && apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN echo "*/5 *	* * *	root	/usr/sbin/logrotate /etc/logrotate.conf" >> /etc/crontab
+RUN apk --update add logrotate
+RUN echo "*/5 *	* * *	/usr/sbin/logrotate /etc/logrotate.conf" >> /etc/crontabs/root
 ADD logrotate.conf /etc/logrotate.conf
 
-CMD ["cron", "-f"]
+CMD ["crond", "-f"]
