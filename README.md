@@ -1,7 +1,7 @@
 # docker-logrotate
-Truncates container logs when they grow in size
 
-## Usage
+This repo is deprecated: we are not going to maintain it anymore.
 
-	docker run -d -v /var/lib/docker/containers:/var/lib/docker/containers:rw tutum/logrotate
+You can visit [Docker Store](https://store.docker.com) to explore similar images.
 
+To access the last commit of the code, please switch to [master branch](https://github.com/tutumcloud/logrotate/tree/master).
